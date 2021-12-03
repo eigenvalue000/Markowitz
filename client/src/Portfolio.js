@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function Portfolio() {
   return (
+    <div>
     <div className="stock-table">
       <table>
         <tr>
@@ -42,12 +43,13 @@ export default function Portfolio() {
         </tr>
       </table>
     </div>
+
     <div className="selected-stock-info">
       <div className="stock-header-name">
         <h2>ABC - The American Brocasting Corporation</h2>
-        <img src="https://image.shutterstock.com/image-vector/simple-infographic-line-chart-sky-260nw-534979027.jpg" alt="temp-graph">
+        <img src="https://image.shutterstock.com/image-vector/simple-infographic-line-chart-sky-260nw-534979027.jpg" alt="temp-graph" />
       </div>
     </div>
-
+</div>
   );
 }
