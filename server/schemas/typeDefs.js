@@ -10,6 +10,7 @@ const typeDefs = gql`
   }
 
   type Stock {
+    symbol: String
     priceHistory: [Float]
     dailyReturns: [Float]
     expectedReturn: Float
