@@ -10,10 +10,7 @@ const typeDefs = gql`
   }
 
   type Stock {
-    priceHistory: [Float]
-    dailyReturns: [Float]
-    expectedReturn: Float
-    variance: Float
+    symbol: String
   }
 
   type Auth {
