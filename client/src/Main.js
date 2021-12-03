@@ -1,29 +1,33 @@
 import React, { useState } from 'react';
-import Portfolio from './Portfolio'
+import Navbar from './Navbar';
+import Portfolio from './pages/Portfolio';
+import AboutUs from './pages/AboutUs';
+import FAQs from './pages/FAQs'
+
 
 export default function Main() {
-  // const [currentPage, setCurrentPage] = useState('Home');
-  //
-  // const renderPage = () => {
-  //   if (currentPage === 'Home') {
-  //     return <Home />;
-  //   }
-  //   if (currentPage === 'About') {
-  //     return <About />;
-  //   }
-  //   if (currentPage === 'Blog') {
-  //     return <Blog />;
-  //   }
-  //   return <Contact />;
-  // };
-  // 
-  // const handlePageChange = (page) => setCurrentPage(page);
+  const [currentPage, setCurrentPage] = useState('Home');
+
+  const renderPage = () => {
+    if (currentPage === 'Home') {
+      return <Portfolio />;
+    }
+    if (currentPage === 'About') {
+      return <AboutUs />;
+    }
+    if (currentPage === 'FAQs') {
+      return <FAQs />;
+    }
+      return <Portfolio />;
+  };
+
+  const handlePageChange = (page) => setCurrentPage(page);
 
   return (
     <div>
-      <h1>
-        <Portfolio />
-      </h1>
+    <Navbar currentPage={currentPage} handlePageChange={handlePageChange} />
+    {renderPage()}
+
     </div>
   );
 }
