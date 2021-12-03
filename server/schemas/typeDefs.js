@@ -1,7 +1,6 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-
   type User {
     _id: ID
     firstName: String
@@ -10,6 +9,12 @@ const typeDefs = gql`
     orders: [Order]
   }
 
+  type Stock {
+    priceHistory: [Float]
+    dailyReturns: [Float]
+    expectedReturn: Float
+    variance: Float
+  }
 
   type Auth {
     token: ID
