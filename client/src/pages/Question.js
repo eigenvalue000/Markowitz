@@ -21,7 +21,7 @@ export default function Question() {
     <button>GHI</button>
 
     <h1>Don't see your stock?</h1>
-    <input type="text" name="stock-search" value="">
+    <input type="text" name="stock-search" value=""/>
 
     <h1>Would you like to continue?</h1>
     <span>ABC</span><span>ABC</span><span>ABC</span><span>ABC</span><span>ABC</span>
