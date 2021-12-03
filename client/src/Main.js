@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Portfolio from './pages/Portfolio';
 import AboutUs from './pages/AboutUs';
-import FAQs from './pages/FAQs'
+import FAQs from './pages/FAQs';
+import Login from './pages/Login';
+import Question from './pages/Question';
+
 
 
 export default function Main() {
@@ -10,7 +13,7 @@ export default function Main() {
 
   const renderPage = () => {
     if (currentPage === 'Home') {
-      return <Portfolio />;
+      return <Login />;
     }
     if (currentPage === 'About') {
       return <AboutUs />;
@@ -18,7 +21,13 @@ export default function Main() {
     if (currentPage === 'FAQs') {
       return <FAQs />;
     }
+    if (currentPage === 'Question') {
+      return <Question />;
+    }
+    if (currentPage === 'Portfolio') {
       return <Portfolio />;
+    }
+      return <Login />;
   };
 
   const handlePageChange = (page) => setCurrentPage(page);
