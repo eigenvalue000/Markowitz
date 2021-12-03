@@ -10,4 +10,5 @@ db.once('open', async () => {
         {symbol: 'JPST'}
     ]);
 
+    console.log('stocks seeded')
 });
