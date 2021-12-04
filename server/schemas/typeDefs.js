@@ -5,6 +5,7 @@ const typeDefs = gql`
     symbol: String!
     closingPrice: Float
     previousClose: Float
+    priceHistory: [Float]
   }
 
   type Query {
