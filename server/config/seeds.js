@@ -3,7 +3,8 @@ const { Stock } = require('../models');
 
 const stockData = [{symbol: 'MSFT'},
 {symbol: 'AMZN'},
-{symbol: 'JPST'}];
+{symbol: 'JPST'}
+];
 
 db.once('open', async () => {
     await Stock.deleteMany();

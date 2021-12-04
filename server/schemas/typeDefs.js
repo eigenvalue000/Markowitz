@@ -9,6 +9,9 @@ const typeDefs = gql`
     stocks: [Stock]
   }
 
+  type Mutation {
+    addStock(symbol: String!): Stock
+  }
 
 `;
 
