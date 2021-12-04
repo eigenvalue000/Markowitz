@@ -1,0 +1,19 @@
+{
+    "name": "markowitz",
+    "version": "1.0.0",
+    "description": "Markowitz is an application that aims to help make investment decisions by getting historical prices for a stock along with measuring the expected\r return and variance of the daily returns of the stock. This is \r accomplished by allowing the user to first decide how many stocks\r will be in their portfolio. Next, a form will generate which requires\r the user to enter in the stock symbols corresponding to the stocks\r in their portfolio. Once the form is filled out, the form then sends\r the list of stock symbols to the back-end. The back-end fetches\r the historical prices for each stock symbol using the IEX/Polygon.io api and stores \r them in the user's account. The daily returns are calculated and \r stored in the user's account. The expected return is calculated \r for the set containing the daily returns. The variance is also \r calculated for the set containing the daily returns. The expected\r return and the variance is sent to the front-end to be displayed\r on the client.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server/server.js",
+        "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+        "install": "cd server && npm i && cd ../client && npm i",
+        "seed": "cd server && npm run seed",
+        "build": "cd client && npm run build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "concurrently": "^5.1.0"
+    }
+}
