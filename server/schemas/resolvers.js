@@ -1,18 +1,16 @@
-// const { AuthenticationError } = require('apollo-server-express');
 const { Stock } = require('../models');
-// const { signToken } = require('../utils/auth');
-
 
 const resolvers = {
   Query: {
-    numberSix() {
-      return 6;
-    },
-    numberSeven() {
-      return 7;
-    }
+      stocks: async () => {
+          return await Stock.find({})
+      }
+  }, 
+  Mutation: {
+      addStock: async (parent, { symbol }) => {
+          return await Stock.create({ symbol });
+      },
   },
-  Mutation: {}
 };
 
 module.exports = resolvers;
