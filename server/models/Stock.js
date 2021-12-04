@@ -12,7 +12,12 @@ const stockSchema = new Schema({
         type: Number,
         required: false,
         trim: true
-    }
+    },
+    previousClose: {
+        type: Number,
+        required: false,
+        trim: true
+    },
 });
 
 const Stock = mongoose.model('Stock', stockSchema);

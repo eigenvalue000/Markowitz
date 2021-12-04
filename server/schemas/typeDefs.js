@@ -4,6 +4,7 @@ const typeDefs = gql`
   type Stock {
     symbol: String!
     closingPrice: Float
+    previousClose: Float
   }
 
   type Query {
@@ -11,7 +12,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addStock(symbol: String!, closingPrice: Float): Stock
+    addStock(symbol: String!, closingPrice: Float, previousClose: Float): Stock
   }
 
 `;
