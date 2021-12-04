@@ -7,8 +7,8 @@ const resolvers = {
       }
   }, 
   Mutation: {
-      addStock: async (parent, { symbol }) => {
-          return await Stock.create({ symbol });
+      addStock: async (parent, { symbol, closingPrice }) => {
+          return await Stock.create({ symbol, closingPrice });
       },
   },
 };

@@ -7,6 +7,11 @@ const stockSchema = new Schema({
         type: String,
         required: true,
         trim: true
+    },
+    closingPrice: {
+        type: Number,
+        required: false,
+        trim: true
     }
 });
 

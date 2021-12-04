@@ -1,9 +1,9 @@
 const db = require('./connection');
 const { Stock } = require('../models');
 
-const stockData = [{symbol: 'MSFT'},
-{symbol: 'AMZN'},
-{symbol: 'JPST'}
+const stockData = [{symbol: 'MSFT', closingPrice: 100},
+{symbol: 'AMZN', closingPrice: 1000},
+{symbol: 'JPST', closingPrice: 50}
 ];
 
 db.once('open', async () => {
