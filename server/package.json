@@ -16,6 +16,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.2.1",
     "mongoose": "^6.0.14",
-    "graphql": "^15.5.1"
+    "graphql": "^15.5.1",
+    "axios": "^0.24.0"
   }
 }
