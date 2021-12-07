@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+
 
 const StockList = ({ stocks }) => {
     if (!stocks.length) {
@@ -13,7 +14,7 @@ const StockList = ({ stocks }) => {
                 <td>{stock.closingPrice}</td>
                 <td>{stock.previousClose}</td>
             </tr>
-            
+
         ))
     )
 };
