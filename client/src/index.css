@@ -23,7 +23,7 @@ code {
 }
 
 .new-user h1{
-  color: #A559E8;
+  color: black;
 }
 
 .new-user{
@@ -80,6 +80,12 @@ code {
   background-color: #A559E8;
 }
 
+.info-section h1{
+  text-align: center;
+  padding-top: 20px;
+  color: black;
+}
+
 .infosec{
   width:33%;
   display: inline-block;
@@ -94,4 +100,52 @@ code {
 
 .infosec h1{
   color: #A559E8;
+}
+
+.question-page{
+  max-width: 720px;
+  margin: auto;
+  background-color: #A559E860;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.question-page h1{
+  color: white;
+  padding-top: 20px;
+}
+
+.qbuttons button{
+  width: 18%;
+  height: 30px;
+  margin-bottom: 15px;
+  margin-left: 5px;
+  border: none;
+}
+
+.stock-search{
+  padding-bottom: 30px;
+}
+
+.stock-search input{
+  width: 40%;
+  height: 20px;
+}
+
+.stock-search button{
+  height: 25px;
+  width: auto;
+  border: none;
+  color: white;
+  background-color: #A559E8;
+}
+
+.cont-btn{
+  border: none;
+  background-color: #A559E8;
+  color: white;
+  height: 30px;
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 70%;
 }
