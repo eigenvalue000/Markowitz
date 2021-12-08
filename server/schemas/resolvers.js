@@ -6,8 +6,11 @@ const resolvers = {
   Query: {
       stocks: async () => {
           return await Stock.find({});
+      },
+      stock: async (parent, {symbol}) => {
+        return await Stock.findOne({symbol});
       }
-  }, 
+  },
   Mutation: {
       addStock: async (parent, { symbol, closingPrice, previousClose, priceHistory }) => {
           return await Stock.create({ symbol, closingPrice, previousClose, priceHistory });
@@ -27,7 +30,7 @@ const resolvers = {
       removeStock: async (parent, { symbol }) => {
           return Stock.findOneAndDelete({ symbol });
       }
-    
+
   },
 };
 

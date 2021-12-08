@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import SingleStock from '../components/SingleStock';
 
 
 const StockList = ({ stocks }) => {
@@ -9,12 +9,7 @@ const StockList = ({ stocks }) => {
 
     return (
         stocks.map((stock) => (
-            <tr>
-                <td>{stock.symbol}</td>
-                <td>{stock.closingPrice}</td>
-                <td>{stock.previousClose}</td>
-            </tr>
-
+          <SingleStock symbol={stock.symbol}/>
         ))
     )
 };
