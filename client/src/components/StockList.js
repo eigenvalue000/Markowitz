@@ -9,7 +9,7 @@ const StockList = ({ stocks }) => {
 
     return (
         stocks.map((stock) => (
-          <SingleStock symbol={stock.symbol}/>
+          <SingleStock symbol={stock}/>
         ))
     )
 };

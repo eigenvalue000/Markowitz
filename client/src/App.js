@@ -50,7 +50,7 @@ function App() {
           <Navbar />
           <div className="container">
           <Routes>
-            <Route exact path="/" element={<Portfolio/>} />
+            <Route exact path="/" element={<Login/>} />
             <Route exact path="/portfolio" element={<Portfolio/>} />
             <Route exact path="/login" element={<Login/>} />
             <Route exact path="/question" element={<Question/>} />
