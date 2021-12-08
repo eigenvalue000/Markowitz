@@ -3,21 +3,21 @@ import { useQuery } from '@apollo/client';
 
 import { QUERY_STOCK_BY_SYMBOL } from '../utils/queries';
 
-const SingleStock = ({ symbol }) => {
+const StockGraph = ({ symbol }) => {
   const { loading, data } = useQuery(QUERY_STOCK_BY_SYMBOL,
     { variables: {symbol: symbol }})
-    //console.log(data);
+    console.log(data);
     const stock = data?.stock || {};
   if (!data) {
-    return (<h1>Stock Not Found</h1>);
+    return (<h1>Stock History Not Found</h1>);
   }
   return (
-    <tr>
-        <td>{stock.symbol}</td>
-        <td>{stock.closingPrice}</td>
-        <td>{stock.previousClose}</td>
-    </tr>
+    <div>
+      { stock.priceHistory.map((price) => (
+        <p>{price}</p>
+      )) }
+    </div>
   )
 }
 
-export default SingleStock;
+export default StockGraph;

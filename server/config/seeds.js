@@ -3,7 +3,7 @@ const { Stock } = require('../models');
 
 const axios = require('axios');
 
-const stockData = [{symbol: 'MSFT', closingPrice: 100, previousClose: 50},
+const stockData = [{symbol: 'MSFT', closingPrice: 100, previousClose: 50, priceHistory: [100, 102, 104, 106]},
 {symbol: 'AMZN', closingPrice: 100, previousClose: 50},
 {symbol: 'JPST', closingPrice: 100, previousClose: 50}
 ];
