@@ -14,3 +14,24 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+export const QUERY_STOCK = gql`
+{
+  stocks {
+		symbol
+    closingPrice
+    previousClose
+    priceHistory
+  }
+}`
+
+
+export const QUERY_STOCK_BY_SYMBOL = gql`
+query stock($symbol: String!) {
+  stock(symbol: $symbol) {
+    symbol
+    closingPrice
+    previousClose
+    priceHistory
+  }
+}`
