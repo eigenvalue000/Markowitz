@@ -11,3 +11,87 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nav{
+  width: 100%;
+  background-color: black;
+}
+
+.login-page{
+  margin: auto;
+  background-color: white;
+}
+
+.new-user h1{
+  color: #A559E8;
+}
+
+.new-user{
+  display: flexbox;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 15px;
+  padding-top: 5px;
+}
+
+.new-user input{
+  height: 20px;
+  width: 25%;
+  border-color: #A559E8;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.new-user button{
+  height: 30px;
+  width: 25%;
+  margin-bottom: 15px;
+  text-decoration: none;
+  color: white;
+  border: none;
+  background-color: #A559E8;
+}
+
+.returning-user{
+  display: flexbox;
+  margin: auto;
+  text-align: center;
+  background-color: #a559e860;
+  color: white;
+  padding-bottom: 15px;
+  padding-top: 5px;
+}
+
+.returning-user input{
+  height: 20px;
+  width: 25%;
+  border-color: #A559E8;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.returning-user button{
+  height: 30px;
+  width: 25%;
+  margin-bottom: 15px;
+  text-decoration: none;
+  color: white;
+  border: none;
+  background-color: #A559E8;
+}
+
+.infosec{
+  width:33%;
+  display: inline-block;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.infosec p{
+  padding:10px;
+}
+
+.infosec h1{
+  color: #A559E8;
+}
