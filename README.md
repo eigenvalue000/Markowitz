@@ -10,7 +10,7 @@ will be in their portfolio. Next, a form will generate which requires
 the user to enter in the stock symbols corresponding to the stocks
 in their portfolio. Once the form is filled out, the form then sends
 the list of stock symbols to the back-end. The back-end fetches
-the historical prices for each stock symbol using the IEX api and stores 
+the historical prices for each stock symbol using the IEX/Polygon.io api and stores 
 them in the user's account. The daily returns are calculated and 
 stored in the user's account. The expected return is calculated 
 for the set containing the daily returns. The variance is also 

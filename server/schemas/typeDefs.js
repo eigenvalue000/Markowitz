@@ -3,6 +3,9 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
   type Stock {
     symbol: String!
+    closingPrice: Float
+    previousClose: Float
+    priceHistory: [Float]
   }
 
   type Query {
@@ -10,7 +13,9 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addStock(symbol: String!): Stock
+    addStock(symbol: String!, closingPrice: Float, previousClose: Float): Stock
+    updateStock(symbol: String!): Stock
+    removeStock(symbol: String!): Stock
   }
 
 `;
