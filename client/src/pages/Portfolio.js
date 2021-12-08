@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_STOCK } from '../utils/queries';
 import StockList from '../components/StockList'
 import Toggle from '../components/Toggle';
+import SingleStock from '../components/SingleStock';
 
 export default function Portfolio() {
   const { loading, data } = useQuery(QUERY_STOCK);
@@ -13,6 +14,7 @@ export default function Portfolio() {
   return (
     <div>
       <Toggle />
+      <SingleStock symbol="JPST"/>
     <div className="stock-table">
       {
         loading ? (<div>Loading...</div>) : (

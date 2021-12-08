@@ -25,12 +25,13 @@ export const QUERY_STOCK = gql`
   }
 }`
 
-// export const QUERY_STOCK = gql`
-// query stocks($symbol: String!) {
-//   stocks(symbol: $symbol) {
-//     symbol
-//     closingPrice
-//     previousClose
-//     priceHistory
-//   }
-// }`
+
+export const QUERY_STOCK_BY_SYMBOL = gql`
+query stock($symbol: String!) {
+  stock(symbol: $symbol) {
+    symbol
+    closingPrice
+    previousClose
+    priceHistory
+  }
+}`
