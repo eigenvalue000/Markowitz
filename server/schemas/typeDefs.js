@@ -14,12 +14,12 @@ const typeDefs = gql`
   }
 
   type Query {
-    numberSix: Int!
-    numberSeven: Int!
+    
+    users: [User]
   }
 
   type Mutation {
-
+    addUser(): User
   }
 `;
 

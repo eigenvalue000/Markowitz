@@ -1,5 +1,5 @@
 // const { AuthenticationError } = require('apollo-server-express');
-const { Stock } = require('../models');
+const { Stock, User } = require('../models');
 // const { signToken } = require('../utils/auth');
 
 
@@ -8,8 +8,8 @@ const resolvers = {
     numberSix() {
       return 6;
     },
-    numberSeven() {
-      return 7;
+    users: async () => {
+      return await User.find({})
     }
   },
   Mutation: {}

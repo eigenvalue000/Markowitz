@@ -20,7 +20,7 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  // orders: [Order.schema]
+  // portfolio: []
 });
 
 // set up pre-save middleware to create password
