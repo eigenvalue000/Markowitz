@@ -53,8 +53,8 @@ const StockGraph = ({ symbol }) => {
       {
         label: `${stock.symbol}`,
         data: stock.priceHistory,
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: 'rgb(165, 89, 232)',
+        backgroundColor: 'rgba(165, 89, 232, 0.5)',
       }
     ],
   };
