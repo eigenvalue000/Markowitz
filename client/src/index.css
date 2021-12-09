@@ -149,3 +149,27 @@ code {
   margin-top: 10px;
   width: 70%;
 }
+
+
+.port-stocks {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.updateBtn {
+  border: none;
+  background-color: #A559E8;
+  color: white;
+  height: 40px;
+  width: 40%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+canvas {
+  height: 50px;
+  width: 50px;
+}

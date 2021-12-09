@@ -9,3 +9,13 @@ export const UPDATE_STOCK = gql`
     }
   }
 `
+
+export const UPDATE_PREVIOUS = gql`
+  mutation getPreviousClose($symbol: String!) {
+    getPreviousClose(symbol: $symbol) {
+      symbol
+      closingPrice
+      previousClose
+    }
+  }
+`
