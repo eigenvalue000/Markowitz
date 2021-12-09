@@ -8,7 +8,7 @@ import StockGraph from '../components/StockGraph';
 import UpdateStocks from '../components/UpdateStocks';
 
 export default function Portfolio() {
-  const stocks = ["MSFT", "AMZN", "ME"]
+  const stocks = ["MSFT", "AMZN", "ME"]; // User.portfolio
 
   return (
     <div>
@@ -32,7 +32,9 @@ export default function Portfolio() {
     <div className="selected-stock-info">
       <div className="stock-header-name">
         <h2>MSFT - Microsoft</h2>
-        <StockGraph symbol="MSFT"/>
+        <StockGraph symbol={stocks[0]}/>
+        <StockGraph symbol={stocks[1]}/>
+        <StockGraph symbol={stocks[2]}/>
       </div>
     </div>
 </div>
