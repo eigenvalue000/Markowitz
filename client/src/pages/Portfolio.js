@@ -1,53 +1,38 @@
 import React from 'react';
+import { useQuery } from '@apollo/client';
+import { QUERY_STOCK } from '../utils/queries';
+import StockList from '../components/StockList';
+import Toggle from '../components/Toggle';
+import SingleStock from '../components/SingleStock';
+import StockGraph from '../components/StockGraph';
+import UpdateStocks from '../components/UpdateStocks';
 
 export default function Portfolio() {
+  const stocks = ["MSFT", "AMZN", "JPST"]
+
   return (
     <div>
+      <Toggle />
     <div className="stock-table">
-      <table>
-        <tr>
-          <th>Stock</th>
-          <th>Price</th>
-          <th>History</th>
-          <th>Variance</th>
-        </tr>
-        <tr>
-          <td>ABC</td>
-          <td>$123</td>
-          <td>+123</td>
-          <td>123</td>
-        </tr>
-        <tr>
-          <td>DEF</td>
-          <td>$123</td>
-          <td>+123</td>
-          <td>123</td>
-        </tr>
-        <tr>
-          <td>GHI</td>
-          <td>$123</td>
-          <td>+123</td>
-          <td>123</td>
-        </tr>
-        <tr>
-          <td>JKL</td>
-          <td>$123</td>
-          <td>+123</td>
-          <td>123</td>
-        </tr>
-        <tr>
-          <td>MNO</td>
-          <td>$123</td>
-          <td>+123</td>
-          <td>123</td>
-        </tr>
-      </table>
+      {
+        (
+          <table>
+          <tr>
+            <th>Stock</th>
+            <th>Closing</th>
+            <th>Previous</th>
+          </tr>
+          <StockList stocks={stocks}/>
+          </table>
+        )
+      }
     </div>
+    <UpdateStocks symbols={stocks} />
 
     <div className="selected-stock-info">
       <div className="stock-header-name">
-        <h2>ABC - The American Brocasting Corporation</h2>
-        <img src="https://image.shutterstock.com/image-vector/simple-infographic-line-chart-sky-260nw-534979027.jpg" alt="temp-graph" />
+        <h2>MSFT - Microsoft</h2>
+        <StockGraph symbol="MSFT"/>
       </div>
     </div>
 </div>

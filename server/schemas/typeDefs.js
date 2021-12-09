@@ -1,26 +1,35 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type User {
+  type Stock {
     _id: ID
-    userName: String
-    email: String
-    password: String
-    orders: [Order]
+    symbol: String!
+    closingPrice: Float
+    previousClose: Float
+    priceHistory: [Float]
   }
 
-  type Stock {
-    symbol: String!
+  type User {
+    _id: ID
+    userName: String!
+    password: String!
+    email: String!
+    portfolio: [String]
   }
 
   type Query {
-    
+    stocks: [Stock]
+    stock(symbol: String!): Stock
     users: [User]
+    user(_id: ID): User
   }
 
   type Mutation {
-    addUser(): User
+    addStock(symbol: String!, closingPrice: Float, previousClose: Float): Stock
+    updateStock(symbol: String!): Stock
+    removeStock(symbol: String!): Stock
   }
+
 `;
 
 module.exports = typeDefs;
