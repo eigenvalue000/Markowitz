@@ -33,7 +33,7 @@ const StockGraph = ({ symbol }) => {
   const { loading, data } = useQuery(QUERY_STOCK_BY_SYMBOL,
     { variables: { symbol: symbol } });
   const stock = data?.stock || {};
-  console.log(stock.symbol);
+  console.log(stock);
 
   const options = {
     responsive: true,
