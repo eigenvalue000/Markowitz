@@ -66,8 +66,6 @@ const StockGraph = ({ symbol }) => {
   return (
     <div style={{width: 700 + 'px'}}>
       <Line options={options} data={dataa} />
-
-
     </div>
   )
 }
