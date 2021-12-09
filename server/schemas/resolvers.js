@@ -37,17 +37,21 @@ const resolvers = {
       const timeRange = '1' + 'm';
       const URL = `https://cloud.iexapis.com/stable/stock/${symbol}/chart/${timeRange}?token=${apiKey}`;
       var historicalPrices = [];
+      var labelDates = [];
       await axios.get(URL).then((res) => { 
-        console.log(res.data.length)
-        console.log(res)
+        //console.log(res.data.length)
+        //console.log(res)
         for (let i = 0; i < res.data.length; i++) {
-          //console.log(res.data[i]);
+          // console.log(i, res.data[i].date);
           historicalPrices.push(res.data[i].close);
+          labelDates.push(res.data[i].date);
         }
          });
-      console.log(historicalPrices);
+      // console.log(historicalPrices);
+      labelDates.shift();
       return Stock.findOneAndUpdate({ symbol: `${symbol}`},
-      { priceHistory: historicalPrices },
+      { priceHistory: historicalPrices,
+        dateLabels: labelDates },
       { new: true });
     },
     getPreviousClose: async (parent, { symbol }) => {

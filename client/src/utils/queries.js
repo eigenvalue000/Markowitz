@@ -22,6 +22,7 @@ export const QUERY_STOCK = gql`
     closingPrice
     previousClose
     priceHistory
+    dateLabels
   }
 }`
 
@@ -33,5 +34,6 @@ query stock($symbol: String!) {
     closingPrice
     previousClose
     priceHistory
+    dateLabels
   }
 }`
