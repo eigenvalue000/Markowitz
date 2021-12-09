@@ -14,7 +14,7 @@ const UpdateStocks = ({symbols}) => {
   return (
     <button
       onClick={onButtonClick}
-    >Update Stocks</button>
+     className="updateBtn" >UPDATE STOCKS</button>
   )
 }
 
