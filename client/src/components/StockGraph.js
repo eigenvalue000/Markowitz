@@ -12,7 +12,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import faker from 'faker';
+// import faker from 'faker';
 
 ChartJS.register(
   CategoryScale,
@@ -30,7 +30,7 @@ ChartJS.register(
 
 const StockGraph = ({ symbol }) => {
 
-  const { loading, data } = useQuery(QUERY_STOCK_BY_SYMBOL,
+  const { data } = useQuery(QUERY_STOCK_BY_SYMBOL,
     { variables: { symbol: symbol } });
   const stock = data?.stock || {};
   //console.log(stock.dateLabels);

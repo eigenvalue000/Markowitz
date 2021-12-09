@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import './style.css';
 // This will require to npm install axios
 // import axios from 'axios';
-import { withRouter } from "react-router";
+//import { withRouter } from "react-router";
 
 class Toggle extends React.Component {
     constructor(props) {

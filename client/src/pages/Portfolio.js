@@ -1,10 +1,10 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { QUERY_STOCK } from '../utils/queries';
+//import { useQuery } from '@apollo/client';
+//import { QUERY_STOCK } from '../utils/queries';
 import StockList from '../components/StockList';
 import Toggle from '../components/Toggle';
-import SingleStock from '../components/SingleStock';
-import StockGraph from '../components/StockGraph';
+//import SingleStock from '../components/SingleStock';
+//import StockGraph from '../components/StockGraph';
 import UpdateStocks from '../components/UpdateStocks';
 import GraphList from '../components/GraphList';
 
@@ -18,6 +18,7 @@ export default function Portfolio() {
     margin: '10px',
   };
 
+  
   return (
     <div>
       <Toggle />
@@ -25,11 +26,13 @@ export default function Portfolio() {
         {
           (
             <table className="port-stocks">
+              <tbody>
               <tr>
                 <th>Stock</th>
                 <th>Closing</th>
                 <th>Previous</th>
               </tr>
+              </tbody>
               <StockList stocks={stocks} />
             </table>
           )
@@ -46,7 +49,3 @@ export default function Portfolio() {
   );
 }
 
-
-{/* <StockGraph symbol={stocks[0]} />
-<StockGraph symbol={stocks[1]} />
-<StockGraph symbol={stocks[2]} /> */}

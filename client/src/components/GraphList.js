@@ -1,5 +1,5 @@
 import React from 'react';
-import SingleStock from '../components/SingleStock';
+// import SingleStock from '../components/SingleStock';
 import StockGraph from '../components/StockGraph';
 
 const GraphList = ({ symbols }) => {
