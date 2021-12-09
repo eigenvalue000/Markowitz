@@ -1,6 +1,6 @@
 const { default: axios } = require('axios');
 const { Stock , User } = require('../models');
-
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -9,6 +9,15 @@ const resolvers = {
       },
       users: async () => {
           return await User.find({});
+      },
+      user: async (parent, { username }) => {
+          return await User.findOne({});
+      },
+      me: async (parent, args, context) => {
+        if (context.user) {
+          return User.findOne({ _id: context.user._id }).populate('thoughts');
+        }
+        throw new AuthenticationError('You need to be logged in!');
       },
       stock: async (parent, {symbol}) => {
         return await Stock.findOne({symbol});
@@ -37,7 +46,7 @@ const resolvers = {
       const timeRange = '1' + 'm';
       const URL = `https://cloud.iexapis.com/stable/stock/${symbol}/chart/${timeRange}?token=${apiKey}`;
       var historicalPrices = [];
-      await axios.get(URL).then((res) => { 
+      await axios.get(URL).then((res) => {
         console.log(res.data.length)
         console.log(res)
         for (let i = 0; i < res.data.length; i++) {
@@ -60,15 +69,37 @@ const resolvers = {
         previousPrice = res.data[0].close;
       });
       console.log(previousPrice);
-      return Stock.findOneAndUpdate({ symbol: `${symbol}` }, 
-      { previousClose: previousPrice }, 
+      return Stock.findOneAndUpdate({ symbol: `${symbol}` },
+      { previousClose: previousPrice },
       { new: true });
     },
     removeStock: async (parent, { symbol }) => {
       return Stock.findOneAndDelete({ symbol });
-    }
+    },
+    addUser: async (parent, { userName, email, password }) => {
+      const user = await User.create({ username, email, password });
+      const token = signToken(user);
+      return { token, user };
+    },
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
 
+      if (!user) {
+        throw new AuthenticationError('No user found with this email address');
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+
+      const token = signToken(user);
+
+      return { token, user };
+    },
   },
+
 };
 
 module.exports = resolvers;
