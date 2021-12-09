@@ -149,3 +149,8 @@ code {
   margin-top: 10px;
   width: 70%;
 }
+
+canvas {
+  height: 50px;
+  width: 50px;
+}

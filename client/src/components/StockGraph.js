@@ -33,14 +33,14 @@ const StockGraph = ({ symbol }) => {
   const { loading, data } = useQuery(QUERY_STOCK_BY_SYMBOL,
     { variables: { symbol: symbol } });
   const stock = data?.stock || {};
-  console.log(stock.priceHistory);
+  console.log(stock.symbol);
 
   const options = {
     responsive: true,
     plugins: {
       title: {
         display: true,
-        text: 'Chart.js Line Chart',
+        text: `${stock.symbol} Line Chart`,
       },
     },
   };
@@ -51,7 +51,7 @@ const StockGraph = ({ symbol }) => {
     labels,
     datasets: [
       {
-        label: 'Dataset 1',
+        label: `${stock.symbol}`,
         data: stock.priceHistory,
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
@@ -64,13 +64,9 @@ const StockGraph = ({ symbol }) => {
     return (<h1>Stock History Not Found</h1>);
   }
   return (
-    <div>
+    <div style={{width: 700 + 'px'}}>
       <Line options={options} data={dataa} />
-      {<div>
-        {stock.priceHistory.map((price) => (
-          <p>{price}</p>
-        ))}
-      </div>}
+
 
     </div>
   )
@@ -82,3 +78,12 @@ export default StockGraph;
 
 
 
+
+
+
+
+//       {<div>
+// {stock.priceHistory.map((price) => (
+//   <p>{price}</p>
+// ))}
+// </div>}
