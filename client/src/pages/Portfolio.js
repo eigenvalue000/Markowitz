@@ -10,6 +10,13 @@ import GraphList from '../components/GraphList';
 
 export default function Portfolio() {
   const stocks = ["MSFT", "AMZN", "ME"]; // User.portfolio
+  const graphListStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexFlow: 'column wrap',
+    margin: '10px',
+  };
 
   return (
     <div>
@@ -31,7 +38,7 @@ export default function Portfolio() {
       <UpdateStocks symbols={stocks} />
 
       <div className="selected-stock-info">
-        <div className="stock-header-name">
+        <div className="stock-header-name" style={graphListStyle}>
           <GraphList symbols={stocks} />
         </div>
       </div>
