@@ -18,6 +18,7 @@ const typeDefs = gql`
     addStock(symbol: String!, closingPrice: Float, previousClose: Float): Stock
     updateStock(symbol: String!): Stock
     getHistoricalPrices(symbol: String!): Stock
+    getPreviousClose(symbol: String!): Stock
     removeStock(symbol: String!): Stock
   }
 

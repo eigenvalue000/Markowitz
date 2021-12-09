@@ -44,6 +44,19 @@ const resolvers = {
       { priceHistory: historicalPrices },
       { new: true });
     },
+    getPreviousClose: async (parent, { symbol }) => {
+      const apiKey = 'pk_7c91c18fa8774e669a5df330e40a50b9';
+      const URL = `https://cloud.iexapis.com/stable/stock/${symbol}/chart/2d?token=${apiKey}`;
+      var previousPrice = -1;
+      await axios.get(URL).then((res) => {
+        console.log(res.data[0].close);
+        previousPrice = res.data[0].close;
+      });
+      console.log(previousPrice);
+      return Stock.findOneAndUpdate({ symbol: `${symbol}` }, 
+      { previousClose: previousPrice }, 
+      { new: true });
+    },
     removeStock: async (parent, { symbol }) => {
       return Stock.findOneAndDelete({ symbol });
     }
