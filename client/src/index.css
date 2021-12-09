@@ -150,6 +150,7 @@ code {
   width: 70%;
 }
 
+
 .port-stocks {
   margin-left: auto;
   margin-right: auto;
@@ -167,4 +168,8 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
+
+canvas {
+  height: 50px;
+  width: 50px;
 }

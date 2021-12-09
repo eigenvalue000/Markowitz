@@ -31,11 +31,14 @@ const resolvers = {
     },
     getHistoricalPrices: async (parent, { symbol }) => {
       const apiKey = 'pk_7c91c18fa8774e669a5df330e40a50b9';
-      const URL = `https://cloud.iexapis.com/stable/stock/${symbol}/chart/5d?token=${apiKey}`;
+      const timeRange = '1' + 'm';
+      const URL = `https://cloud.iexapis.com/stable/stock/${symbol}/chart/${timeRange}?token=${apiKey}`;
       var historicalPrices = [];
       await axios.get(URL).then((res) => { 
+        console.log(res.data.length)
+        console.log(res)
         for (let i = 0; i < res.data.length; i++) {
-          console.log(res.data[i]);
+          //console.log(res.data[i]);
           historicalPrices.push(res.data[i].close);
         }
          });
@@ -46,7 +49,8 @@ const resolvers = {
     },
     getPreviousClose: async (parent, { symbol }) => {
       const apiKey = 'pk_7c91c18fa8774e669a5df330e40a50b9';
-      const URL = `https://cloud.iexapis.com/stable/stock/${symbol}/chart/2d?token=${apiKey}`;
+      const timeRange = '5' + 'd';
+      const URL = `https://cloud.iexapis.com/stable/stock/${symbol}/chart/${timeRange}?token=${apiKey}`;
       var previousPrice = -1;
       await axios.get(URL).then((res) => {
         console.log(res.data[0].close);
