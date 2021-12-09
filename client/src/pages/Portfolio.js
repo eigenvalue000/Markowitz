@@ -16,7 +16,7 @@ export default function Portfolio() {
     <div className="stock-table">
       {
         (
-          <table>
+          <table className="port-stocks">
           <tr>
             <th>Stock</th>
             <th>Closing</th>
