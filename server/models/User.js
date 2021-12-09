@@ -19,6 +19,11 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
+  portfolio: {
+    type: Array,
+    required: true,
+    allowNull: true
+  }
 });
 
 const User = mongoose.model('User', userSchema);

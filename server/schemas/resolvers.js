@@ -1,15 +1,18 @@
 const { default: axios } = require('axios');
-const { Stock } = require('../models');
+const { Stock , User } = require('../models');
 
 
 const resolvers = {
   Query: {
-    stocks: async () => {
-      return await Stock.find({});
-    },
-    stock: async (parent, { symbol }) => {
-      return await Stock.findOne({ symbol });
-    }
+      stocks: async () => {
+          return await Stock.find({});
+      },
+      users: async () => {
+          return await User.find({});
+      },
+      stock: async (parent, {symbol}) => {
+        return await Stock.findOne({symbol});
+      }
   },
   Mutation: {
     addStock: async (parent, { symbol, closingPrice, previousClose, priceHistory }) => {

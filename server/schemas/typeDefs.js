@@ -9,9 +9,19 @@ const typeDefs = gql`
     priceHistory: [Float]
   }
 
+  type User {
+    _id: ID
+    userName: String!
+    password: String!
+    email: String!
+    portfolio: [String]
+  }
+
   type Query {
     stocks: [Stock]
     stock(symbol: String!): Stock
+    users: [User]
+    user(_id: ID): User
   }
 
   type Mutation {

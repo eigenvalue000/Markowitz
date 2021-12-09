@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { Stock } = require('../models');
+const { Stock , User } = require('../models');
 
 const axios = require('axios');
 
@@ -26,10 +26,22 @@ db.once('open', async () => {
     // }
 
     await Stock.deleteMany();
+    await User.deleteMany();
 
     const stocks = await Stock.insertMany(stockData);
 
+    const user = await User.insertMany([
+        {
+            userName: 'user1', 
+            email: 'user1@email.com', 
+            password: 'pswrd',
+            // portfolio: [''],
+        },
+    ]);
+    
+    
+    console.log('users seeded')
+    console.log('stocks seeded')
     console.log(stockData.length)
-    console.log('stocks seeded');
     process.exit(0);
 });
