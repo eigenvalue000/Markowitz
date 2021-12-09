@@ -35,5 +35,6 @@ query stock($symbol: String!) {
     previousClose
     priceHistory
     dateLabels
+    meanReturn
   }
 }`

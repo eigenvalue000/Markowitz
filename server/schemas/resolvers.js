@@ -1,6 +1,6 @@
 const { default: axios } = require('axios');
 const { Stock , User } = require('../models');
-
+const math = require('mathjs');
 
 const resolvers = {
   Query: {
@@ -38,6 +38,8 @@ const resolvers = {
       const URL = `https://cloud.iexapis.com/stable/stock/${symbol}/chart/${timeRange}?token=${apiKey}`;
       var historicalPrices = [];
       var labelDates = [];
+      var dayReturns = [];
+      var avgReturn = -1
       await axios.get(URL).then((res) => { 
         //console.log(res.data.length)
         //console.log(res)
@@ -48,10 +50,22 @@ const resolvers = {
         }
          });
       // console.log(historicalPrices);
+      // Generate daily returns array
+      for (let i = 0; i < historicalPrices.length; i++) {
+        if ( i === 0) {
+          dayReturns[0] = 1;
+          continue;
+        }
+        dayReturns[i] = (historicalPrices[i] - historicalPrices[i - 1]) / historicalPrices[i - 1];
+      }
+      console.log(math.round(math.mean(dayReturns) * 10000) / 10000);
+      
       labelDates.pop();
       return Stock.findOneAndUpdate({ symbol: `${symbol}`},
       { priceHistory: historicalPrices,
-        dateLabels: labelDates },
+        dateLabels: labelDates,
+        dailyReturns: dayReturns,
+      meanReturn: math.round(math.mean(dayReturns) * 10000) / 10000 },
       { new: true });
     },
     getPreviousClose: async (parent, { symbol }) => {

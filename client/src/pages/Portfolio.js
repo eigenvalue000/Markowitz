@@ -31,6 +31,7 @@ export default function Portfolio() {
                 <th>Stock</th>
                 <th>Closing</th>
                 <th>Previous</th>
+                <th>20 Day Mean Return</th>
               </tr>
               </tbody>
               <StockList stocks={stocks} />
