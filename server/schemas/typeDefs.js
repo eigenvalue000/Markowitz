@@ -17,6 +17,7 @@ const typeDefs = gql`
   type Mutation {
     addStock(symbol: String!, closingPrice: Float, previousClose: Float): Stock
     updateStock(symbol: String!): Stock
+    getHistoricalPrices(symbol: String!): Stock
     removeStock(symbol: String!): Stock
   }
 
