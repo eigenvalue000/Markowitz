@@ -13,32 +13,34 @@ export default function Portfolio() {
   return (
     <div>
       <Toggle />
-    <div className="stock-table">
-      {
-        (
-          <table className="port-stocks">
-          <tr>
-            <th>Stock</th>
-            <th>Closing</th>
-            <th>Previous</th>
-          </tr>
-          <StockList stocks={stocks}/>
-          </table>
-        )
-      }
-    </div>
-    <UpdateStocks symbols={stocks} />
+      <div className="stock-table">
+        {
+          (
+            <table className="port-stocks">
+              <tr>
+                <th>Stock</th>
+                <th>Closing</th>
+                <th>Previous</th>
+              </tr>
+              <StockList stocks={stocks} />
+            </table>
+          )
+        }
+      </div>
+      <UpdateStocks symbols={stocks} />
 
-    <div className="selected-stock-info">
-      <div className="stock-header-name">
-      <h2>{stocks[0]}</h2>
-        <StockGraph symbol={stocks[0]}/>
-        <h2>{stocks[1]}</h2>
-        <StockGraph symbol={stocks[1]}/>
-        <h2>{stocks[2]}</h2>
-        <StockGraph symbol={stocks[2]}/>
+      <div className="selected-stock-info">
+        <div className="stock-header-name">
+          <h2>{stocks[0]}</h2>
+          <StockGraph symbol={stocks[0]} />
+          <h2>{stocks[1]}</h2>
+          <StockGraph symbol={stocks[1]} />
+          <h2>{stocks[2]}</h2>
+          <StockGraph symbol={stocks[2]} />
+        </div>
       </div>
     </div>
-</div>
   );
 }
+
+
