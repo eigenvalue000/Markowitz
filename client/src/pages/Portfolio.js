@@ -31,9 +31,11 @@ export default function Portfolio() {
 
     <div className="selected-stock-info">
       <div className="stock-header-name">
-        <h2>MSFT - Microsoft</h2>
+      <h2>{stocks[0]}</h2>
         <StockGraph symbol={stocks[0]}/>
+        <h2>{stocks[1]}</h2>
         <StockGraph symbol={stocks[1]}/>
+        <h2>{stocks[2]}</h2>
         <StockGraph symbol={stocks[2]}/>
       </div>
     </div>
