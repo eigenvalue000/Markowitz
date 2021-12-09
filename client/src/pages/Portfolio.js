@@ -6,6 +6,7 @@ import Toggle from '../components/Toggle';
 import SingleStock from '../components/SingleStock';
 import StockGraph from '../components/StockGraph';
 import UpdateStocks from '../components/UpdateStocks';
+import GraphList from '../components/GraphList';
 
 export default function Portfolio() {
   const stocks = ["MSFT", "AMZN", "ME"]; // User.portfolio
@@ -31,12 +32,7 @@ export default function Portfolio() {
 
       <div className="selected-stock-info">
         <div className="stock-header-name">
-          <h2>{stocks[0]}</h2>
-          <StockGraph symbol={stocks[0]} />
-          <h2>{stocks[1]}</h2>
-          <StockGraph symbol={stocks[1]} />
-          <h2>{stocks[2]}</h2>
-          <StockGraph symbol={stocks[2]} />
+          <GraphList symbols={stocks} />
         </div>
       </div>
     </div>
@@ -44,3 +40,6 @@ export default function Portfolio() {
 }
 
 
+{/* <StockGraph symbol={stocks[0]} />
+<StockGraph symbol={stocks[1]} />
+<StockGraph symbol={stocks[2]} /> */}
