@@ -7,6 +7,7 @@ const typeDefs = gql`
     closingPrice: Float
     previousClose: Float
     priceHistory: [Float]
+    dateLabels: [String]
   }
 
   type User {

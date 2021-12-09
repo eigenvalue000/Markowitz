@@ -19,6 +19,7 @@ const stockSchema = new Schema({
         trim: true
     },
     priceHistory: [Number],
+    dateLabels: [String]
 });
 
 const Stock = mongoose.model('Stock', stockSchema);
