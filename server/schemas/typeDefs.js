@@ -8,6 +8,8 @@ const typeDefs = gql`
     previousClose: Float
     priceHistory: [Float]
     dateLabels: [String]
+    dailyReturns: [Float]
+    meanReturn: Float
   }
 
   type User {
