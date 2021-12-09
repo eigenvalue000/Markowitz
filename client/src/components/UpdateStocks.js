@@ -5,9 +5,9 @@ import { UPDATE_PREVIOUS } from '../utils/mutations';
 import { UPDATE_HISTORY } from '../utils/mutations';
 
 const UpdateStocks = ({symbols}) => {
-  const [updateStock, {data}] = useMutation(UPDATE_STOCK);
-  const [updatePrevious, {data1}] = useMutation(UPDATE_PREVIOUS);
-  const [updateHistory, {data2}] = useMutation(UPDATE_HISTORY);
+  const [updateStock] = useMutation(UPDATE_STOCK);
+  const [updatePrevious] = useMutation(UPDATE_PREVIOUS);
+  const [updateHistory] = useMutation(UPDATE_HISTORY);
   
   function onButtonClick() {
     symbols.map((symbol) => updateStock( { variables: {symbol: symbol} } ) );
