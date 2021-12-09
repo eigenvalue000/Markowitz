@@ -48,7 +48,7 @@ const resolvers = {
         }
          });
       // console.log(historicalPrices);
-      labelDates.shift();
+      labelDates.pop();
       return Stock.findOneAndUpdate({ symbol: `${symbol}`},
       { priceHistory: historicalPrices,
         dateLabels: labelDates },
