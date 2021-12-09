@@ -52,7 +52,7 @@ const StockGraph = ({ symbol }) => {
     datasets: [
       {
         label: `${stock.symbol}`,
-        data: stock.dailyReturns,
+        data: stock.priceHistory,
         borderColor: 'rgb(165, 89, 232)',
         backgroundColor: 'rgba(165, 89, 232, 0.5)',
       }
