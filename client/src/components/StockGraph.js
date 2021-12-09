@@ -66,11 +66,7 @@ const StockGraph = ({ symbol }) => {
   return (
     <div style={{width: 700 + 'px'}}>
       <Line options={options} data={dataa} />
-      {<div>
-        {stock.priceHistory.map((price) => (
-          <p>{price}</p>
-        ))}
-      </div>}
+
 
     </div>
   )
@@ -82,3 +78,12 @@ export default StockGraph;
 
 
 
+
+
+
+
+//       {<div>
+// {stock.priceHistory.map((price) => (
+//   <p>{price}</p>
+// ))}
+// </div>}
