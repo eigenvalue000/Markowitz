@@ -18,16 +18,16 @@ export default function Question() {
       <div className="info-section">
         <h1>ABOUT MARKOWITZ</h1>
         <div className="infosec">
-          <h1>LOREM</h1>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <h1>WHO ARE WE?</h1>
+          <p>We are a team that has put together an app based around Harry Markowitzs' portfolio theory.</p>
         </div>
         <div className="infosec">
-          <h1>IPSUM</h1>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <h1>WHAT DOES OUR APP DO?</h1>
+          <p>Our App helps make investment decisions by getting historical prices for a stock along with measuring the expected return and variance of the daily returns to the stocks of your choice.</p>
         </div>
         <div className="infosec">
-          <h1>LOREM</h1>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <h1>WHAT API'S DO WE USE?</h1>
+          <p>Our app fetches the historical prices for each stock using IEX/Polygon.io api.</p>
         </div>
       </div>
     </div>
