@@ -18,8 +18,8 @@ const SingleStock = ({ symbol }) => {
   console.log(stock.symbol)
   function onButtonClick() {
     console.log(`Generating ${symbol} chart...`);
-    
-   
+
+
     // window.location.reload(false);
   }
 

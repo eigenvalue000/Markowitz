@@ -30,7 +30,7 @@ export default function Question() {
       <div className="qstocks">
         <h1>WHICH STOCKS DO YOU OWN?</h1>
         <div className="qbuttons">
-          <button onClick={addToPortfolio}>APPL</button>
+          <button onClick={addToPortfolio}>AAPL</button>
           <button onClick={addToPortfolio}>KO</button>
           <button onClick={addToPortfolio}>JNJ</button>
           <button onClick={addToPortfolio}>DIS</button>
