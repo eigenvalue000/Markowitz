@@ -7,7 +7,7 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
   userName: {
     type: String,
-    required: true,
+    //required: true,
     trim: true
   },
   email: {
@@ -27,18 +27,18 @@ const userSchema = new Schema({
   }
 });
 
-userSchema.pre('save', async function (next) {
-  if (this.isNew || this.isModified('password')) {
-    const saltRounds = 10;
-    this.password = await bcrypt.hash(this.password, saltRounds);
-  }
-
-  next();
-});
-
-userSchema.methods.isCorrectPassword = async function (password) {
-  return bcrypt.compare(password, this.password);
-};
+// userSchema.pre('save', async function (next) {
+//   if (this.isNew || this.isModified('password')) {
+//     const saltRounds = 10;
+//     this.password = await bcrypt.hash(this.password, saltRounds);
+//   }
+//
+//   next();
+// });
+//
+// userSchema.methods.isCorrectPassword = async function (password) {
+//   return bcrypt.compare(password, this.password);
+// };
 
 const User = mongoose.model('User', userSchema);
 
