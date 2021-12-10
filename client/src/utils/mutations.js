@@ -19,3 +19,12 @@ export const UPDATE_PREVIOUS = gql`
     }
   }
 `
+
+export const UPDATE_HISTORY = gql`
+  mutation getHistoricalPrices($symbol: String!) {
+    getHistoricalPrices(symbol: $symbol) {
+      symbol
+      priceHistory
+    }
+  }
+`

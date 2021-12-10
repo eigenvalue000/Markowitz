@@ -12,7 +12,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import faker from 'faker';
+// import faker from 'faker';
 
 ChartJS.register(
   CategoryScale,
@@ -30,10 +30,10 @@ ChartJS.register(
 
 const StockGraph = ({ symbol }) => {
 
-  const { loading, data } = useQuery(QUERY_STOCK_BY_SYMBOL,
+  const { data } = useQuery(QUERY_STOCK_BY_SYMBOL,
     { variables: { symbol: symbol } });
   const stock = data?.stock || {};
-  console.log(stock.symbol);
+  //console.log(stock.dateLabels);
 
   const options = {
     responsive: true,
@@ -45,16 +45,16 @@ const StockGraph = ({ symbol }) => {
     },
   };
 
-  const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-
+  const labels = stock.dateLabels;
+  
   const dataa = {
     labels,
     datasets: [
       {
         label: `${stock.symbol}`,
         data: stock.priceHistory,
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: 'rgb(165, 89, 232)',
+        backgroundColor: 'rgba(165, 89, 232, 0.5)',
       }
     ],
   };
