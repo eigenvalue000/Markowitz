@@ -25,6 +25,7 @@ const typeDefs = gql`
     stock(symbol: String!): Stock
     users: [User]
     user(_id: ID): User
+    userEmail(email: String!): User
   }
 
   type Mutation {
@@ -34,6 +35,7 @@ const typeDefs = gql`
     getPreviousClose(symbol: String!): Stock
     removeStock(symbol: String!): Stock
     addUser(userName: String, password: String!, email: String!, portfolio: [String]): User
+    updatePortfolio(email: String!, portfolio: [String]): User
   }
 
 `;
