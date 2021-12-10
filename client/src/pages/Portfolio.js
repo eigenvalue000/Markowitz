@@ -8,7 +8,7 @@ import StockGraph from '../components/StockGraph';
 import UpdateStocks from '../components/UpdateStocks';
 
 export default function Portfolio() {
-  const stocks = ["MSFT", "AMZN", "JPST"]
+  const stocks = ["MSFT", "AMZN", "ME"]
 
   return (
     <div>
@@ -16,7 +16,7 @@ export default function Portfolio() {
     <div className="stock-table">
       {
         (
-          <table>
+          <table className="port-stocks">
           <tr>
             <th>Stock</th>
             <th>Closing</th>
