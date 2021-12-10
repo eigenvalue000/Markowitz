@@ -34,8 +34,10 @@ const typeDefs = gql`
     getHistoricalPrices(symbol: String!): Stock
     getPreviousClose(symbol: String!): Stock
     removeStock(symbol: String!): Stock
-    addUser(userName: String, password: String!, email: String!, portfolio: [String]): User
     updatePortfolio(email: String!, portfolio: [String]): User
+    addUser(email: String!, password: String!): User
+    updateUser(email: String, password: String): User
+    login(email: String!, password: String!): User
   }
 
 `;

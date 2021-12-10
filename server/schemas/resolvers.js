@@ -21,6 +21,36 @@ const resolvers = {
     addStock: async (parent, { symbol, closingPrice, previousClose, priceHistory }) => {
       return await Stock.create({ symbol, closingPrice, previousClose, priceHistory });
     },
+    addUser: async (parent, args) => {
+      const user = await User.create(args);
+      const token = signToken(user);
+
+      return { token, user };
+    },
+    updateUser: async (parent, args, context) => {
+      if (context.user) {
+        return await User.findByIdAndUpdate(context.user._id, args, { new: true });
+      }
+
+      throw new AuthenticationError('Not logged in');
+    },
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email, password });
+
+      if (!user) {
+        throw new AuthenticationError('Incorrect login');
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect login');
+      }
+
+      const token = signToken(user);
+
+      return { token, user };
+    },
     updateStock: async (parent, { symbol }) => {
       const apiKey = 'pk_7c91c18fa8774e669a5df330e40a50b9';
       const URL = `https://cloud.iexapis.com/stable/stock/${symbol}/quote?token=${apiKey}`;
@@ -69,7 +99,7 @@ const resolvers = {
           priceHistory: historicalPrices,
           dateLabels: labelDates,
           dailyReturns: dayReturns,
-          meanReturn: math.round(math.mean(dayReturns) * 10000) / 10000
+          meanReturn: (math.round(math.mean(dayReturns) * 10000) / 10000) * 100
         },
         { new: true });
     },

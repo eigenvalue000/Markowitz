@@ -14,32 +14,32 @@ export default function AboutUs() {
           <div className="about-stu-card">
             <h1>GARRETT KEGEL</h1>
             <h3>BACKEND</h3>
-            <h3>BACKEND</h3>
-            <button>GITHUB</button>
+            <h3>STOCK COLLECTIONS</h3>
+            <h3>API</h3>
+            <a href="https://github.com/eigenvalue000" target="_blank"><button>GITHUB</button></a>
           </div>
           <div className="about-stu-card"> 
             <h1>JAMES LOPEZ</h1>
             <h3>BACKEND</h3>
-            <h3>BACKEND</h3>
-            <button>GITHUB</button>
+            <h3>USER COLLECTIONS</h3>
+            <a href="https://github.com/Semaj-sudo" target="_blank"><button>GITHUB</button></a>
           </div>
           <div className="about-stu-card">
             <h1>DAVE BLOIS</h1>
             <h3>FRONTEND</h3>
             <h3>UTILITIES</h3>
-            <button>GITHUB</button>
+            <a href="https://github.com/davebloisesquire" target="_blank"><button>GITHUB</button></a>
           </div>
           <div className="about-stu-card">
             <h1>MATTHEW JAWORSKI</h1>
             <h3>FRONTEND</h3>
             <h3>CSS/STYLING</h3>
-            <button>GITHUB</button>
+            <a href="https://github.com/Mattyjaws" target="_blank"><button>GITHUB</button></a>
           </div>
           <div className="about-stu-card">
             <h1>AYELE LINTAMO</h1>
             <h3>FRONTEND</h3>
-            <h3>FRONTEND</h3>
-            <button>GITHUB</button>
+            <a href="https://github.com/ayele4" target="_blank"><button>GITHUB</button></a>
           </div>
         </div>
       </div>
