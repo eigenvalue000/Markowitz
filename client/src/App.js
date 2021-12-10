@@ -41,7 +41,7 @@ const client = new ApolloClient({
   uri: 'http://localhost:3001/graphql',
   cache: new InMemoryCache(),
 });
-
+//dploying app
 function App() {
   return (
     <ApolloProvider client={client}>
