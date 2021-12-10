@@ -34,9 +34,9 @@ const typeDefs = gql`
     getPreviousClose(symbol: String!): Stock
     removeStock(symbol: String!): Stock
 
-    addUser(email: String!, password: String!): Auth
+    addUser(email: String!, password: String!): User
     updateUser(email: String, password: String): User
-    login(email: String!, password: String!): Auth
+    login(email: String!, password: String!): User
 
   }
 
