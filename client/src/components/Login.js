@@ -2,28 +2,30 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
-import { LOGIN } from '../utils/mutations';
+// import { LOGIN } from '../utils/mutations';
 
-const SignUp = () => {
-  const [newUser, {error, data}] = useMutation(ADD_USER)
-  const signUpNewUser = () => {
-      const suEmail = document.getElementById('signup-email').value;
-      const suPassword = document.getElementById('signup-pass').value;
-      newUser({ variables: {email: suEmail, password: suPassword} });
-      console.log(" - User Added - ");
+const Login = () => {
+  //const [loginUser, {error, data}] = useMutation(ADD_USER)
+  const loginUser = () => {
+      const liEmail = document.getElementById('signup-email').value;
+      const liPassword = document.getElementById('signup-pass').value;
+      sessionStorage.setItem('user', liEmail);
+      // loginUser({ variables: {email: suEmail, password: suPassword} });
+      console.log(" - User Logged In - ");
+      window.location.replace("/question");
   }
 
 
   return (
     <div>
-    <h1>NEW TO STOCKS?</h1>
-      <input id="signup-email" type="email" placeholder="email"/>
+    <h1>ALREADY HAVE AN ACCOUNT?</h1>
+      <input id="login-email" type="email" placeholder="email"/>
       <br />
-      <input id="signup-pass" type="password" placeholder="password" />
+      <input id="login-pass" type="password" placeholder="password" />
       <br />
-      <button id="signup-btn" onClick={signUpNewUser} >SIGN UP</button>
+      <button id="signup-btn" onClick={loginUser} >LOG IN</button>
     </div>
   )
 }
 
-export default SignUp;
+export default Login;

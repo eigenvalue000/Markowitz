@@ -1,5 +1,7 @@
 import React from 'react';
 import SignUp from '../components/SignUp'
+import Login from '../components/Login'
+
 
 export default function Question() {
   return (
@@ -8,12 +10,7 @@ export default function Question() {
         <SignUp/>
       </div>
       <div className="returning-user">
-        <h1>ALREADY HAVE AN ACCOUNT?</h1>
-        <input type="email" placeholder="email"/>
-        <br />
-        <input type="password" placeholder="password" />
-        <br />
-      <button>LOG IN</button>
+        <Login/>
       </div>
       <div className="info-section">
         <h1>ABOUT MARKOWITZ</h1>
