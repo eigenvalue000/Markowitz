@@ -7,8 +7,8 @@ import { useMutation } from '@apollo/client';
 const Login = () => {
   //const [loginUser, {error, data}] = useMutation(ADD_USER)
   const loginUser = () => {
-      const liEmail = document.getElementById('signup-email').value;
-      const liPassword = document.getElementById('signup-pass').value;
+      const liEmail = document.getElementById('login-email').value;
+      const liPassword = document.getElementById('login-pass').value;
       sessionStorage.setItem('user', liEmail);
       // loginUser({ variables: {email: suEmail, password: suPassword} });
       console.log(" - User Logged In - ");
