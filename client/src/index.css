@@ -31,6 +31,14 @@ code {
   text-decoration: none;
 }
 
+.nav a:hover{
+  text-decoration: underline;
+}
+
+.nav a:active{
+  font-weight: bold;
+}
+
 .login-page{
   margin: auto;
   background-color: white;
@@ -66,6 +74,10 @@ code {
   background-color: #A559E8;
 }
 
+.new-user button:hover{
+  background-color: #703b9e;
+}
+
 .returning-user{
   display: flexbox;
   margin: auto;
@@ -92,6 +104,10 @@ code {
   color: white;
   border: none;
   background-color: #A559E8;
+}
+
+.returning-user button:hover{
+  background-color: #703b9e;
 }
 
 .info-section h1{
@@ -137,6 +153,11 @@ code {
   border: none;
 }
 
+.qbuttons button:hover{
+  background-color: #A559E8;
+  color: white;
+}
+
 .stock-search{
   padding-bottom: 30px;
 }
@@ -154,6 +175,10 @@ code {
   background-color: #A559E8;
 }
 
+.stock-search button:hover{
+  background-color: #703b9e;
+}
+
 .cont-btn{
   border: none;
   background-color: #A559E8;
@@ -162,6 +187,10 @@ code {
   margin-left: 20px;
   margin-top: 10px;
   width: 70%;
+}
+
+.cont-btn:hover{
+  background-color: #703b9e;
 }
 
 
@@ -184,6 +213,9 @@ code {
   align-items: center;
 }
 
+.updateBtn:hover{
+  background-color: #703b9e;
+}
 
 .mark-info{
   text-align: center;
@@ -230,8 +262,6 @@ canvas {
   margin-left: 7px;
   padding: 5px;
   display: inline-block;
-  font-size: 1em;
-  overflow: hidden;
 }
 
 .about-stu-card button{
@@ -244,8 +274,54 @@ canvas {
   margin-bottom: 20px;
 }
 
+.about-stu-card button:hover{
+  background-color: #703b9e;
+}
+
 .about-stu-card h1{
   color: #A559E8;
   padding: 5px;
+  margin: 5px;
 }
 
+.marko a:hover{
+  color: #703b9e;
+}
+
+
+@media (max-width: 768px){
+  
+  .infosec{
+    width: 100%;
+  }
+
+  .infosec p{
+    margin: 10px;
+  }
+
+  .qbuttons button{
+    width: 30%;
+  }
+
+  .new-user input{
+    width: 50%;
+  }
+
+  .new-user button{
+    width: 50%;
+  }
+
+  .returning-user input{
+    width: 50%;
+  }
+
+  .returning-user button{
+    width: 50%;
+  }
+
+  .about-stu-card{
+    width: 75%;
+    margin-bottom: 10px;
+  }
+
+}

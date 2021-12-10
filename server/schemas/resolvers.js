@@ -96,7 +96,7 @@ const resolvers = {
           priceHistory: historicalPrices,
           dateLabels: labelDates,
           dailyReturns: dayReturns,
-          meanReturn: math.round(math.mean(dayReturns) * 10000) / 10000
+          meanReturn: (math.round(math.mean(dayReturns) * 10000) / 10000) * 100
         },
         { new: true });
     },
@@ -116,6 +116,9 @@ const resolvers = {
     },
     removeStock: async (parent, { symbol }) => {
       return Stock.findOneAndDelete({ symbol });
+    },
+    addUser: async (parent, { userName, password, email, portfolio }) => {
+      return User.create({userName, password, email, portfolio});
     }
 
   },
