@@ -1,9 +1,17 @@
-import React from 'react';
 
-export default function FAQs() {
+import React, { useState } from 'react'
+
+const Contact = () => {
   return (
-    <div>
-      FAQs
-    </div>
-  );
-}
+      <div id="contact-form">
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Your email address" />
+          <textarea placeholder="Your question"></textarea>
+          <button>Send Message</button>
+          <span>Thank you for your message, we will be in touch in no time!</span>
+      </div>
+  
+  
+ );
+};
+export default Contact;
