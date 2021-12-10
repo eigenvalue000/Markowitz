@@ -168,7 +168,7 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-
+}
 canvas {
   height: 50px;
   width: 50px;
