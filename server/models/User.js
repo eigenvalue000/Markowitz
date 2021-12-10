@@ -23,7 +23,7 @@ const userSchema = new Schema({
   },
   portfolio: {
     type: Array,
-    required: true,
+    // required: true,
     allowNull: true
   }
 });
