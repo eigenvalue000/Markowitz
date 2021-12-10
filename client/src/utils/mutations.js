@@ -38,3 +38,12 @@ mutation addUser($userName: String, $email: String!, $password: String!, $portfo
   }
 }
 `
+
+export const UPDATE_PORTFOLIO = gql`
+mutation updatePortfolio($email: String!, $portfolio: [String]) {
+  updatePortfolio(email: $email, portfolio: $portfolio) {
+    email
+    portfolio
+  }
+}
+`
