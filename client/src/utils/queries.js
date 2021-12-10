@@ -41,8 +41,8 @@ query stock($symbol: String!) {
 }`
 
 export const QUERY_USER_BY_EMAIL = gql`
-query user($email: String!) {
-  user(email: $email) {
+query userEmail($email: String!) {
+  userEmail(email: $email) {
     _id
     email
     portfolio

@@ -1,6 +1,6 @@
 import React from 'react';
-//import { useQuery } from '@apollo/client';
-//import { QUERY_STOCK } from '../utils/queries';
+import { useQuery } from '@apollo/client';
+import { QUERY_USER_BY_EMAIL } from '../utils/queries';
 import StockList from '../components/StockList';
 import Toggle from '../components/Toggle';
 //import SingleStock from '../components/SingleStock';
@@ -9,7 +9,15 @@ import UpdateStocks from '../components/UpdateStocks';
 import GraphList from '../components/GraphList';
 
 export default function Portfolio() {
-  const stocks = ["MSFT", "AMZN", "ME"]; // User.portfolio
+  const currentUser = sessionStorage.getItem('user');
+  const { loading, error, data } = useQuery(QUERY_USER_BY_EMAIL, {
+    variables: {email: currentUser}
+  })
+  if (loading) return 'loading...';
+  if (error) return 'error';
+  const stocks = JSON.parse(sessionStorage.getItem("userPortfolio"));
+  //const stocks = data.userEmail.portfolio; // User.portfolio
+  //console.log(data.userEmail.portfolio[1])
   const graphListStyle = {
     display: 'flex',
     alignItems: 'center',
@@ -18,7 +26,7 @@ export default function Portfolio() {
     margin: '10px',
   };
 
-  
+
   return (
     <div>
       <Toggle />
@@ -26,6 +34,7 @@ export default function Portfolio() {
         {
           (
             <table className="port-stocks">
+              <h2>{data.userEmail.portfolio.map((item) => <span>{item}</span>)}</h2>
               <tbody>
               <tr>
                 <th>Stock</th>
@@ -49,4 +58,3 @@ export default function Portfolio() {
     </div>
   );
 }
-
