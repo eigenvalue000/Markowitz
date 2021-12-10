@@ -12,6 +12,9 @@ const resolvers = {
     },
     stock: async (parent, { symbol }) => {
       return await Stock.findOne({ symbol });
+    },
+    userEmail: async (parent, { email }) => {
+      return await User.findOne({ email });
     }
   },
   Mutation: {
@@ -119,6 +122,11 @@ const resolvers = {
     },
     addUser: async (parent, { userName, password, email, portfolio }) => {
       return User.create({userName, password, email, portfolio});
+    },
+    updatePortfolio: async (parent, { email, portfolio }) => {
+      return User.findOneAndUpdate({email: `${email}`},
+        {portfolio: portfolio}
+      )
     }
 
   },

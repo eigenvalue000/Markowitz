@@ -25,6 +25,7 @@ const typeDefs = gql`
     stock(symbol: String!): Stock
     users: [User]
     user(_id: ID): User
+    userEmail(email: String!): User
   }
 
   type Mutation {
@@ -33,11 +34,10 @@ const typeDefs = gql`
     getHistoricalPrices(symbol: String!): Stock
     getPreviousClose(symbol: String!): Stock
     removeStock(symbol: String!): Stock
-
+    updatePortfolio(email: String!, portfolio: [String]): User
     addUser(email: String!, password: String!): User
     updateUser(email: String, password: String): User
     login(email: String!, password: String!): User
-
   }
 
 `;

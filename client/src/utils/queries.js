@@ -39,3 +39,13 @@ query stock($symbol: String!) {
     meanReturn
   }
 }`
+
+export const QUERY_USER_BY_EMAIL = gql`
+query user(email: String!) {
+  user(email: $email) {
+    _id
+    email
+    portfolio
+  }
+}
+`
