@@ -14,7 +14,21 @@ code {
 
 .nav{
   width: 100%;
-  background-color: black;
+  background-color: #A559E8;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav li{
+  display: inline-block;
+  padding: 14px 12px;
+}
+
+.nav a{
+  color: white;
+  text-decoration: none;
 }
 
 .login-page{
@@ -168,8 +182,68 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.mark-info{
+  text-align: center;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mark-info p{
+  text-align: left;
+  padding-left: 5px;
+  padding-bottom: 10px;
+}
+
+.marko{
+  text-decoration: none;
+  color: #A559E8;
+  font-weight: bold;
+}
 
 canvas {
   height: 50px;
   width: 50px;
+}
+
+.about-stu-sec{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.about-team{
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.about-stu-card{
+  width: 18%;
+  border:#A559E8;
+  border-style: solid;
+  margin-left: 7px;
+  padding: 5px;
+  display: inline-block;
+  font-size: 1em;
+  overflow: hidden;
+}
+
+.about-stu-card button{
+  background-color: #A559E8;
+  height: 35px;
+  width: 75%;
+  border: none;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about-stu-card h1{
+  color: #A559E8;
+  padding: 5px;
 }
