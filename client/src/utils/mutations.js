@@ -28,3 +28,13 @@ export const UPDATE_HISTORY = gql`
     }
   }
 `
+export const ADD_USER = gql`
+mutation addUser($userName: String, $email: String!, $password: String!, $portfolio: [String]) {
+  addUser(userName: $userName, email: $email, password: $password, portfolio: $portfolio) {
+    userName
+    email
+    password
+    portfolio
+  }
+}
+`

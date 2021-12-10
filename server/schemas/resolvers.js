@@ -86,6 +86,9 @@ const resolvers = {
     },
     removeStock: async (parent, { symbol }) => {
       return Stock.findOneAndDelete({ symbol });
+    },
+    addUser: async (parent, { userName, password, email, portfolio }) => {
+      return User.create({userName, password, email, portfolio});
     }
 
   },
