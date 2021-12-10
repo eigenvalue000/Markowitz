@@ -1,6 +1,10 @@
 import React from 'react';
 
 export default function Question() {
+  const updateUserPortfolio = () => {
+
+  }
+
   return (
     <div className="question-page">
       <div className="qstocks">
@@ -38,7 +42,3 @@ export default function Question() {
     </div>
   );
 }
-
-
-
-
