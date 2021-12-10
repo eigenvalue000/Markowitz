@@ -1,15 +1,11 @@
 import React from 'react';
+import SignUp from '../components/SignUp'
 
 export default function Question() {
   return (
     <div className="login-page">
       <div className="new-user">
-        <h1>NEW TO STOCKS?</h1>
-          <input type="email" placeholder="email" />
-          <br />
-          <input type="password" placeholder="password" />
-          <br />
-        <button>SIGN UP</button>
+        <SignUp/>
       </div>
       <div className="returning-user">
         <h1>ALREADY HAVE AN ACCOUNT?</h1>

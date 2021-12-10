@@ -7,11 +7,14 @@ const typeDefs = gql`
     closingPrice: Float
     previousClose: Float
     priceHistory: [Float]
+    dateLabels: [String]
+    dailyReturns: [Float]
+    meanReturn: Float
   }
 
   type User {
     _id: ID
-    userName: String!
+    userName: String
     password: String!
     email: String!
     portfolio: [String]
@@ -30,6 +33,7 @@ const typeDefs = gql`
     getHistoricalPrices(symbol: String!): Stock
     getPreviousClose(symbol: String!): Stock
     removeStock(symbol: String!): Stock
+    addUser(userName: String, password: String!, email: String!, portfolio: [String]): User
   }
 
 `;

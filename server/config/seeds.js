@@ -35,7 +35,7 @@ db.once('open', async () => {
             userName: 'user1', 
             email: 'user1@email.com', 
             password: 'pswrd',
-            // portfolio: [''],
+            portfolio: ['MSFT', 'AMZN', 'ME'],
         },
     ]);
     
