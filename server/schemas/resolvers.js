@@ -66,7 +66,7 @@ const resolvers = {
           priceHistory: historicalPrices,
           dateLabels: labelDates,
           dailyReturns: dayReturns,
-          meanReturn: math.round(math.mean(dayReturns) * 10000) / 10000
+          meanReturn: (math.round(math.mean(dayReturns) * 10000) / 10000) * 100
         },
         { new: true });
     },
