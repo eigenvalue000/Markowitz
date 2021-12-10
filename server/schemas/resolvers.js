@@ -1,18 +1,18 @@
 const { default: axios } = require('axios');
-const { Stock , User } = require('../models');
-
+const { Stock, User } = require('../models');
+const math = require('mathjs');
 
 const resolvers = {
   Query: {
-      stocks: async () => {
-          return await Stock.find({});
-      },
-      users: async () => {
-          return await User.find({});
-      },
-      stock: async (parent, {symbol}) => {
-        return await Stock.findOne({symbol});
-      }
+    stocks: async () => {
+      return await Stock.find({});
+    },
+    users: async () => {
+      return await User.find({});
+    },
+    stock: async (parent, { symbol }) => {
+      return await Stock.findOne({ symbol });
+    }
   },
   Mutation: {
 <<<<<<< HEAD
@@ -87,18 +87,38 @@ const resolvers = {
       const timeRange = '1' + 'm';
       const URL = `https://cloud.iexapis.com/stable/stock/${symbol}/chart/${timeRange}?token=${apiKey}`;
       var historicalPrices = [];
-      await axios.get(URL).then((res) => { 
-        console.log(res.data.length)
-        console.log(res)
+      var labelDates = [];
+      var dayReturns = [];
+      var avgReturn = -1
+      await axios.get(URL).then((res) => {
+        //console.log(res.data.length)
+        //console.log(res)
         for (let i = 0; i < res.data.length; i++) {
-          //console.log(res.data[i]);
+          // console.log(i, res.data[i].date);
           historicalPrices.push(res.data[i].close);
+          labelDates.push(res.data[i].date);
         }
-         });
-      console.log(historicalPrices);
-      return Stock.findOneAndUpdate({ symbol: `${symbol}`},
-      { priceHistory: historicalPrices },
-      { new: true });
+      });
+      // console.log(historicalPrices);
+      // Generate daily returns array
+      for (let i = 0; i < historicalPrices.length; i++) {
+        if (i === 0) {
+          dayReturns[0] = 0;
+          continue;
+        }
+        dayReturns[i] = (historicalPrices[i] - historicalPrices[i - 1]) / historicalPrices[i - 1];
+      }
+      console.log(math.round(math.mean(dayReturns) * 10000) / 10000);
+
+      labelDates.pop();
+      return Stock.findOneAndUpdate({ symbol: `${symbol}` },
+        {
+          priceHistory: historicalPrices,
+          dateLabels: labelDates,
+          dailyReturns: dayReturns,
+          meanReturn: math.round(math.mean(dayReturns) * 10000) / 10000
+        },
+        { new: true });
     },
     getPreviousClose: async (parent, { symbol }) => {
       const apiKey = 'pk_7c91c18fa8774e669a5df330e40a50b9';
@@ -110,9 +130,9 @@ const resolvers = {
         previousPrice = res.data[0].close;
       });
       console.log(previousPrice);
-      return Stock.findOneAndUpdate({ symbol: `${symbol}` }, 
-      { previousClose: previousPrice }, 
-      { new: true });
+      return Stock.findOneAndUpdate({ symbol: `${symbol}` },
+        { previousClose: previousPrice },
+        { new: true });
     },
     removeStock: async (parent, { symbol }) => {
       return Stock.findOneAndDelete({ symbol });

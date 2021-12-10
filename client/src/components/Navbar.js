@@ -5,27 +5,27 @@ function Navbar({ currentPage, handlePageChange }) {
     <ul className="nav nav-tabs">
       <li className="nav-item">
         <a href="/">
-          Home
-        </a>
-      </li>
-      <li className="nav-item">
-        <a href="/aboutus">
-          About Us
-        </a>
-      </li>
-      <li className="nav-item">
-        <a href="/faqs">
-          FAQs
+          HOME
         </a>
       </li>
       <li className="nav-item">
         <a href="/question">
-          Question
+          QUESTIONS
         </a>
       </li>
       <li className="nav-item">
         <a href="/portfolio">
-          Portfolio
+          PORTFOLIO
+        </a>
+      </li>
+      <li className="nav-item">
+        <a href="/aboutus">
+          ABOUT US
+        </a>
+      </li>
+      <li className="nav-item">
+        <a href="/faqs">
+          FAQ
         </a>
       </li>
     </ul>
