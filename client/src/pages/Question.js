@@ -55,7 +55,7 @@ export default function Question() {
       <div>
         <h1>WOULD YOU LIKE TO CONTINUE?</h1>
         <div>
-          {portfolio.map((stock) => <div>{stock}</div>)}
+          {portfolio.map((stock) => <div className="stock-choice">{stock}</div>)}
         </div>
         <button className="cont-btn" onClick={updateUserPortfolio}>CONTINUE</button>
       </div>
