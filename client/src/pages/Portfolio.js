@@ -29,12 +29,10 @@ export default function Portfolio() {
 
   return (
     <div>
-      <Toggle />
       <div className="stock-table">
         {
           (
             <table className="port-stocks">
-              <h2>{data.userEmail.portfolio.map((item) => <span>{item}</span>)}</h2>
               <tbody>
               <tr>
                 <th>Stock</th>

@@ -20,6 +20,11 @@ const typeDefs = gql`
     portfolio: [String]
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type Query {
     stocks: [Stock]
     stock(symbol: String!): Stock
@@ -35,9 +40,9 @@ const typeDefs = gql`
     getPreviousClose(symbol: String!): Stock
     removeStock(symbol: String!): Stock
     updatePortfolio(email: String!, portfolio: [String]): User
-    addUser(email: String!, password: String!): User
+    addUser(email: String!, password: String!): Auth
     updateUser(email: String, password: String): User
-    login(email: String!, password: String!): User
+    login(email: String!, password: String!): Auth
   }
 
 `;
