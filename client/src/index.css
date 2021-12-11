@@ -265,6 +265,18 @@ canvas {
   text-align: center;
 }
 
+.stock-choice{
+  display: inline-block;
+  width: 18%;
+  height: 30px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  background-color: #703b9e;
+}
+
 .about-stu-card{
   width: 18%;
   border:#A559E8;
