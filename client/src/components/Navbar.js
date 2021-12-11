@@ -1,34 +1,24 @@
 import React from 'react';
+import logo from './markowitz-logo.png';
 
 function Navbar({ currentPage, handlePageChange }) {
   return (
-    <ul className="nav nav-tabs">
-      <li className="nav-item">
-        <a href="/">
-          HOME
-        </a>
-      </li>
-      <li className="nav-item">
-        <a href="/question">
-          QUESTIONS
-        </a>
-      </li>
-      <li className="nav-item">
-        <a href="/portfolio">
-          PORTFOLIO
-        </a>
-      </li>
-      <li className="nav-item">
-        <a href="/aboutus">
-          ABOUT US
-        </a>
-      </li>
-      <li className="nav-item">
-        <a href="/faqs">
-          FAQ
-        </a>
-      </li>
-    </ul>
+    <div className="nav">
+      <div className="nav-left">
+        <div className="nav-menu">
+          <a href="/">Home</a>
+          <a href="/question">Questions</a>
+          <a href="/portfolio">Portfolio</a>
+          <a href="/aboutus">About Us</a>
+          <a href="/faqs">FAQ</a>
+        </div>
+      </div> 
+      <div className="nav-right">
+        <div className="logo">
+          <img src={logo} />
+        </div>
+      </div>
+    </div>
   );
 }
 

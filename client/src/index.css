@@ -15,20 +15,30 @@ code {
 .nav{
   width: 100%;
   background-color: #A559E8;
-  height: 50px;
-  margin: 0;
+  height: 70px;
+  display: flex;
   padding: 0;
-  list-style: none;
 }
 
-.nav li{
-  display: inline-block;
-  padding: 14px 12px;
+.nav-left{
+  flex: 90%;
+  display: flex;
+  align-items: center;
 }
 
-.nav a{
+.nav .nav-right{
+  flex: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 15px;
+}
+
+.nav-menu a{
   color: white;
   text-decoration: none;
+  padding: 0 10px;
+  float: left;
 }
 
 .nav a:hover{
@@ -288,6 +298,55 @@ canvas {
   color: #703b9e;
 }
 
+.question-form{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  background-color: #A559E860;
+}
+
+.name-field input{
+  width: 40%;
+  height: 30px;
+  text-align: center;
+}
+
+.email-field input{
+  width: 40%;
+  height: 30px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.question-field textarea{
+  width: 40%;
+  height: 200px;
+  margin-top: 20px;
+  text-align: center;
+  resize: none;
+}
+
+.send-question button{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 40%;
+  border: none;
+  height: 40px;
+  color: white;
+  background-color: #A559E8;
+}
+
+.send-question button:hover{
+  background-color: #703b9e;
+}
+
+@media (max-width: 1200px){
+  .about-stu-card{
+    width: 45%;
+    margin-bottom: 10px;
+  }
+}
 
 @media (max-width: 768px){
   
@@ -322,6 +381,26 @@ canvas {
   .about-stu-card{
     width: 75%;
     margin-bottom: 10px;
+  }
+
+  .question-form{
+    width: 100%;
+  }
+
+  .name-field input{
+    width: 70%;
+  }
+
+  .email-field input{
+    width: 70%;
+  }
+
+  .question-field textarea{
+    width: 70%;
+  }
+
+  .send-question button{
+    width: 70%;
   }
 
 }
