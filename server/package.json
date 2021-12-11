@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "watch": "nodemon",
     "seed": "node config/seeds.js"
   },
   "author": "",
@@ -20,5 +21,8 @@
     "axios": "^0.24.0",
     "bcrypt": "^5.0.1",
     "mathjs": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   }
 }
