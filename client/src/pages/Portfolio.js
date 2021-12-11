@@ -17,7 +17,6 @@ export default function Portfolio() {
   if (error) return 'error';
   const stocks = JSON.parse(sessionStorage.getItem("userPortfolio"));
   //const stocks = data.userEmail.portfolio; // User.portfolio
-  //console.log(data.userEmail.portfolio[1])
   const graphListStyle = {
     display: 'flex',
     alignItems: 'center',
@@ -34,7 +33,7 @@ export default function Portfolio() {
         {
           (
             <table className="port-stocks">
-              <h2>{data.userEmail.portfolio.map((item) => <span>{item}</span>)}</h2>
+
               <tbody>
               <tr>
                 <th>Stock</th>

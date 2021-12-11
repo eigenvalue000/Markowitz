@@ -5,7 +5,7 @@ const axios = require('axios');
 
 const stockData = [{symbol: 'MSFT', closingPrice: 100, previousClose: 50, priceHistory: [100, 102, 104, 106]},
 {symbol: 'AMZN', closingPrice: 100, previousClose: 50},
-{symbol: 'JPST', closingPrice: 100, previousClose: 50}
+{symbol: 'JPST', closingPrice: 100, previousClose: 50},
 ];
 
 // 'https://cloud.iexapis.com/v1/stock/MSFT/price?token=pk_7c91c18fa8774e669a5df330e40a50b9'
@@ -32,14 +32,14 @@ db.once('open', async () => {
 
     const user = await User.insertMany([
         {
-            userName: 'user1', 
-            email: 'user1@email.com', 
+            userName: 'user1',
+            email: 'user1@email.com',
             password: 'pswrd',
             portfolio: ['MSFT', 'AMZN', 'ME'],
         },
     ]);
-    
-    
+
+
     console.log('users seeded')
     console.log('stocks seeded')
     console.log(stockData.length)
