@@ -1,6 +1,7 @@
 const { default: axios } = require('axios');
 const { Stock, User } = require('../models');
 const math = require('mathjs');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -21,10 +22,9 @@ const resolvers = {
     addStock: async (parent, { symbol, closingPrice, previousClose, priceHistory }) => {
       return await Stock.create({ symbol, closingPrice, previousClose, priceHistory });
     },
-    addUser: async (parent, args) => {
-      const user = await User.create(args);
+    addUser: async (parent, { email, password }) => {
+      const user = await User.create({email, password});
       const token = signToken(user);
-
       return { token, user };
     },
     updateUser: async (parent, args, context) => {
@@ -35,7 +35,7 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
     login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email, password });
+      const user = await User.findOne({ email });
 
       if (!user) {
         throw new AuthenticationError('Incorrect login');
@@ -120,9 +120,7 @@ const resolvers = {
     removeStock: async (parent, { symbol }) => {
       return Stock.findOneAndDelete({ symbol });
     },
-    // addUser: async (parent, { userName, password, email, portfolio }) => {
-    //   return User.create({userName, password, email, portfolio});
-    // },
+
     updatePortfolio: async (parent, { email, portfolio }) => {
       return User.findOneAndUpdate({email: `${email}`},
         {portfolio: portfolio}

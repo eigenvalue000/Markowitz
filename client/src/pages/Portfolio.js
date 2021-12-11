@@ -3,13 +3,12 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USER_BY_EMAIL } from '../utils/queries';
 import StockList from '../components/StockList';
 import Toggle from '../components/Toggle';
-//import SingleStock from '../components/SingleStock';
-//import StockGraph from '../components/StockGraph';
 import UpdateStocks from '../components/UpdateStocks';
 import GraphList from '../components/GraphList';
+import Auth from '../utils/auth';
 
 export default function Portfolio() {
-  const currentUser = sessionStorage.getItem('user');
+  const currentUser = Auth.getProfile().data.email
   const { loading, error, data } = useQuery(QUERY_USER_BY_EMAIL, {
     variables: {email: currentUser}
   })
