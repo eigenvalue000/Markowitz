@@ -29,13 +29,16 @@ export const UPDATE_HISTORY = gql`
   }
 `
 export const ADD_USER = gql`
-mutation addUser($email: String!, $password: String!) {
-  addUser( email: $email, password: $password) {
-    email
-    password
+  mutation addUser($email: String!, $password: String!) {
+    addUser(email: $email, password: $password) {
+      token
+      user {
+        _id
+        email
+      }
+    }
   }
-}
-`
+`;
 
 export const UPDATE_PORTFOLIO = gql`
 mutation updatePortfolio($email: String!, $portfolio: [String]) {
@@ -52,3 +55,14 @@ mutation addStock($symbol: String!) {
   }
 }
 `
+export const LOGIN_USER = gql`
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      user {
+        _id
+        email
+      }
+    }
+  }
+`;

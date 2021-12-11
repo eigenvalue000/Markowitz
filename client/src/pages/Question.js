@@ -2,8 +2,10 @@ import React, {useState} from 'react';
 import { useMutation } from '@apollo/client';
 import { UPDATE_PORTFOLIO, ADD_STOCK } from '../utils/mutations';
 
+import Auth from '../utils/auth';
+
 export default function Question() {
-  const currentUser = sessionStorage.getItem('user');
+  const currentUser = Auth.getProfile().data.email;
   const [portfolio, setPortfolio] = useState([]);
   const [updateUserStocks, {error, data}] = useMutation(UPDATE_PORTFOLIO);
   const [addStockToDB] = useMutation(ADD_STOCK);
