@@ -45,7 +45,7 @@ const Login = (props) => {
           <h1>ALREADY HAVE AN ACCOUNT?</h1>
             {data ? (
               <p>
-              {window.location.replace("/portfolio")}
+                {window.location.replace("/portfolio")}
                 Success! You may now head{' '}
                 <Link to="/portfolio">to the portfolio.</Link>
               </p>
