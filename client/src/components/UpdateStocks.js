@@ -13,7 +13,6 @@ const UpdateStocks = ({symbols}) => {
     symbols.map((symbol) => updateStock( { variables: {symbol: symbol} } ) );
     symbols.map((symbol) => updatePrevious( { variables: {symbol: symbol} }));
     symbols.map((symbol) => updateHistory( { variables: {symbol: symbol} }));
-    updateHistory( { variables: {symbol: symbol }});
     window.location.reload(false);
   }
   return (
